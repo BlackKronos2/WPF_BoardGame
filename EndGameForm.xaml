@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LABA8"
         mc:Ignorable="d"
-        Title="EndGameForm" Height="450" Width="300">
+        Title="Окончание Игры" Height="450" Width="300">
     <Grid Loaded="Grid_Loaded">
         <Label Content="Игра окончена" HorizontalAlignment="Left" Margin="76,31,0,0" VerticalAlignment="Top" Height="47" Width="151" FontSize="20"/>
         <Label x:Name="Player1" Content="Player1" HorizontalAlignment="Left" Margin="44,108,0,0" VerticalAlignment="Top" Height="29" Width="116" FontSize="15"/>

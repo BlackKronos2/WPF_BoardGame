@@ -324,12 +324,17 @@ namespace LABA8
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            _dices.Animation = !(bool)(animationChechBox.IsChecked);
+            _dices.Animation = false;
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             gameManager.Move_steps++;
+        }
+
+        private void animationChechBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            _dices.Animation = true;
         }
     }
 }

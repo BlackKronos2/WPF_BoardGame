@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Engine",
+    "\\Game"
   ],
-  "SelectedNode": "\\GameScence.xaml",
+  "SelectedNode": "\\LABA8.sln",
   "PreviewInSolutionExplorer": false
 }
