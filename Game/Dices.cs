@@ -16,26 +16,34 @@ namespace LABA_8
     public class Dices
     {
         [DataMember]
+        /// <summary> Таймер для анимации </summary>
         int tics;
         [DataMember]
+        /// <summary> Длина анимации </summary>
         private int timer_interval;
         [DataMember]
+        /// <summary> Значение кубика 1 (от 1 до 6) </summary>
         private int value1;
         [DataMember]
+        /// <summary> Значение кубика 2 (от 1 до 6) </summary>
         private int value2;
 
         [DataMember]
+        /// <summary> Нажатие на кнопку </summary>
         public bool Button { get; set; }
         [DataMember]
+        /// <summary> Будет ли анимация перемешивания кубиков </summary>
         public bool Animation { get; set; }
 
         static Random random1 = new Random((int)DateTime.Now.Ticks + 600);
         static Random random2 = new Random((int)DateTime.Now.Ticks);
 
+        /// <summary> Куб 1 </summary>
         private Image _dice1;
+        /// <summary> Куб 2 </summary>
         private Image _dice2;
 
-
+        /// <summary> Изображения кубиков </summary>
         BitmapImage[] Images = new BitmapImage[6] {
                 new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Resources\\Dice_1.png")),
                 new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Resources\\Dice_2.png")),
@@ -64,6 +72,7 @@ namespace LABA_8
 
         }
 
+        /// <summary> Инициализация, применяется при десериализации </summary>
         public void DicesInit(Image dice1, Image dice2) {
             _dice1 = dice1;
             _dice2 = dice2;
@@ -84,6 +93,7 @@ namespace LABA_8
             random2 = new Random((int)DateTime.Now.Ticks);
         }
 
+        /// <summary> Смена значения и изображения (перемешивание кубов) </summary>
         private void Mixing()
         {
             value1 = random1.Next(1, 7); //получение случайного числа от 1 до 6 
@@ -93,6 +103,7 @@ namespace LABA_8
             _dice2.Source = Images[value2 - 1];
         }
 
+        /// <summary> События по фиксирванному таймеру </summary>
         public void Dice_Update()
         {
             if (Button)
@@ -126,11 +137,13 @@ namespace LABA_8
                 }
         }
 
+        /// <summary> Получение значений кубиков </summary>
         public int Values
         {
             get { return value1 * 10 + value2; }
         }
 
+        /// <summary> Отрисовка кубиков </summary>
         public void DrawDices(Graphics graphics)
         {
             if (_dice1.Source == null || _dice2.Source == null)
@@ -138,9 +151,6 @@ namespace LABA_8
                 _dice1.Source = Images[value1 - 1];
                 _dice2.Source = Images[value2 - 1];
             }
-
-            //render1.DrawSprite(graphics);
-            //render2.DrawSprite(graphics);
         }
     }
 }

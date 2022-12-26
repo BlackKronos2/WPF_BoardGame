@@ -18,26 +18,34 @@ namespace LABA_8
         public Image sprite { get; set; }
 
         [DataMember]
+        /// <summary> Номер игрока </summary>
         int number;
 
         [DataMember]
+        /// <summary> Имя игрока </summary>
         public string Name { get; set; } = "";
 
         [DataMember]
+        /// <summary> Номер точки карты, на которой игрок находится </summary>
         public int point_number { get; set; } = 0;
 
         [DataMember]
+        /// <summary> Координты смещения игрока, если он будет на 1 точке с другой фишкой </summary>
         private Point shift;
 
         [DataMember]
+        /// <summary> Координты смещения игрока, если он будет на 1 точке с другой фишкой </summary>
         public bool Shift { get; set; } = true;
 
         [DataMember]
+        /// <summary> Сумма текущих координат и координат смещения </summary>
         private Point delta;
 
         [DataMember]
+        /// <summary> Изображение для фишки </summary>
         string file_sprite;
 
+        /// <summary> Изображения для фишки </summary>
         static string[] sprites = new string[4] {
             Environment.CurrentDirectory + "\\Resources\\Red.png",
             Environment.CurrentDirectory + "\\Resources\\Blue.png",
@@ -45,6 +53,7 @@ namespace LABA_8
             Environment.CurrentDirectory + "\\Resources\\Yellow.png"
         };
 
+        /// <summary> Конструктор </summary>
         public Player(int newnumber, string newname, Point point)
         {
             number = newnumber;
@@ -76,6 +85,7 @@ namespace LABA_8
             delta = new Point(30, 45);
         }
 
+        /// <summary> Отображение игрока </summary>
         public void DrawSprite(Canvas canvas)
         {
             int renderx = (int)(Position.X - delta.X + ((Shift) ? (shift.X) : (0)));

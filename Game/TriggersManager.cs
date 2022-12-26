@@ -11,8 +11,10 @@ namespace LABA_8
     public class TriggersManager : GameStatistics
     {
         [DataMember]
+        /// <summary> Номер игрока, который сейчас ходит </summary>
         private int activeplayernumber;
         [DataMember]
+        /// <summary> Желтые точки карты (Игрок на них пропускает ход) </summary>
         private int[] yellow_points = new int[]{
             6,
             48,
@@ -21,6 +23,7 @@ namespace LABA_8
             89
         };
         [DataMember]
+        /// <summary> Зеленые точки карты (Игрок на них получает доп. ход) </summary>
         private int[] green_points = new int[] {
             10,
             52,
@@ -29,10 +32,13 @@ namespace LABA_8
         };
 
         [DataMember]
+        /// <summary> Получает ли текущий игрок доп. ход </summary>
         bool green_flag;
         [DataMember]
+        /// <summary> Номер игрока, который пропустит ход </summary>
         private int skip_number = -5;
 
+        //Пути вынужденного перемещения игроков
         [DataMember]
         Way blue_way_1 = new Way(
             new Point[] {
@@ -90,6 +96,7 @@ namespace LABA_8
             }, 74);
 
         [DataMember]
+        /// <summary> Нуждается ли игрок в вынужденном перемещении </summary>
         protected Way active_way;
 
         public int ActivePlayerNumber
@@ -101,11 +108,13 @@ namespace LABA_8
             }
         }
 
+        /// <summary> Проверка на события </summary>
         public void TriggerCheking()
         {
             CheckingGreenAndYellowPoints();
         }
 
+        /// <summary> Проверка на события </summary>
         public void CheckingGreenAndYellowPoints()
         {
             green_flag = false;
@@ -141,6 +150,7 @@ namespace LABA_8
                 green_flag = false;
         }
 
+        /// <summary> Проверка на события </summary>
         public void CheckingBlueAndRedPoints()
         {
             switch (_players[(activeplayernumber == -1) ? (0) : (activeplayernumber)].point_number)

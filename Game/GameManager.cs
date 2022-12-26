@@ -6,23 +6,28 @@ using System.Windows.Controls;
 using System.Windows;
 
 namespace LABA_8
-{
+{   /// <summary>
+    /// Логика игры
+    /// </summary>
     [DataContract]
     public class GameManager : TriggersManager
     {
-        /// <summary>
-        /// Сохранение логики игры
-        /// </summary>
+        
         [DataMember]
+        /// <summary> координаты всех точек карт </summary
         Point[] points;
         [DataMember]
+        /// <summary> Следующие за текущей точки каждого игрока </summary>
         Point[] next_point;
 
         [DataMember]
+        /// <summary> Кол-во точек, на которое надо сдвинутся фишке </summary>
         private int move_steps;
 
         [DataMember]
+        /// <summary> Определяет ход 1 круга </summary>
         private int firstmoveflag = 0;
+
 
         public GameManager(System.Windows.Point[] map_points, int player_count)
         {
@@ -56,6 +61,7 @@ namespace LABA_8
             active_way.Active = false;
         }
 
+         /// <summary> Отображение обьектов </summary>
         public void Draw(Canvas canvas)
         {
             float[] Y_Position = new float[_players.Count];
@@ -70,6 +76,7 @@ namespace LABA_8
                 _players[Number[i]].DrawSprite(canvas);
         }
 
+        /// <summary> События по фиксированному времени </summary>
         public void GameTic()
         {
             var number = ActivePlayerNumber;
@@ -135,12 +142,14 @@ namespace LABA_8
             CheckPositions();
         }
 
+        /// <summary> Кол-во точек, на которое надо сдвинутся фишке </summary>
         public int Move_steps
         {
             get { return move_steps; }
             set { move_steps = value; }
         }
 
+        /// <summary> Сдвиг фишек игроков, если они находятся на 1 точке карты </summary>
         private void CheckPositions()
         {
             for (int i = 0; i < _players.Count; i++)
@@ -153,6 +162,7 @@ namespace LABA_8
                 }
         }
 
+        /// <summary> Окончание игры </summary>
         private void EndGame()
         {
             string[] names = new string[players_finish.Count];

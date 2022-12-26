@@ -11,8 +11,10 @@ namespace LABA_8
     public class Transform
     {
         [DataMember]
+        /// <summary> Позиция обьека (Координаты) </summary>
         private Point position;
 
+        /// <summary> Перемещение объекта к цели с заданной скоростью </summary>
         public virtual void MoveToward(Point target, float speed)
         {
             if (target != position)
@@ -39,6 +41,7 @@ namespace LABA_8
             }
         }
 
+        /// <summary> Получение/Моментальное изменение координат </summary>
         public Point Position
         {
             get { return position; }
