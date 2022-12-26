@@ -1,0 +1,31 @@
+﻿<Window x:Name="Settings_Window" x:Class="LABA8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LABA8"
+        mc:Ignorable="d"
+        Title="Начальные Настройки" Height="536" Width="309.73" Closing="Settings_Window_Closing"
+        ResizeMode="NoResize">
+    <Grid Margin="0,0,426.6,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Настройка игры" Margin="91,51,-218,0" VerticalAlignment="Top" Width="127" RenderTransformOrigin="-1.014,0.438" FontSize="16" HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
+        <Label Content="Кол-во игроков" HorizontalAlignment="Left" Margin="106,131,-202,0" VerticalAlignment="Top" Width="96" Grid.ColumnSpan="2"/>
+        <Label Content="Скорость игры" HorizontalAlignment="Left" Margin="106,214,-202,0" VerticalAlignment="Top" Width="96" Grid.ColumnSpan="2"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="100" Margin="247,229,-247,0" VerticalAlignment="Top" Width="0" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="PlayerCountBox" HorizontalAlignment="Left" Height="18" Margin="106,162,-202,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged" IsEnabled="False" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="GameSpeedBox" HorizontalAlignment="Left" Height="18" Margin="106,245,-202,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TextChanged="GameSpeedBox_TextChanged" IsEnabled="False" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="checkBox1" Content="Режим тестировщика" HorizontalAlignment="Left" Margin="11,474,-160,0" VerticalAlignment="Top" Width="149" Grid.ColumnSpan="2"/>
+        <Button Content="Начать игру&#xD;&#xA;" HorizontalAlignment="Left" Margin="91,310,-218,0" VerticalAlignment="Top" Width="127" Height="25" FontSize="16" Click="Button_Click_1" Grid.ColumnSpan="2"/>
+        <Button x:Name="button2" Content="Загрузить игру&#xD;&#xA;" HorizontalAlignment="Left" Margin="91,340,-218,0" VerticalAlignment="Top" Width="127" Height="25" FontSize="16" Grid.ColumnSpan="2" Click="button2_Click"/>
+        <Slider x:Name="slider1" HorizontalAlignment="Left" Margin="106,185,-202,0" VerticalAlignment="Top" Width="96" ValueChanged="Slider_ValueChanged" IsSnapToTickEnabled="True"
+    TickFrequency="1" Grid.ColumnSpan="2"/>
+        <Slider x:Name="slider2" HorizontalAlignment="Left" Margin="106,268,-202,0" VerticalAlignment="Top" Width="96" ValueChanged="slider2_ValueChanged" IsSnapToTickEnabled="True"
+    TickFrequency="1" Grid.ColumnSpan="2"/>
+
+
+    </Grid>
+</Window>
