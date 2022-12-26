@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\arefe\Source\Repos\Laba_8\obj\Debug\
+C:\Users\arefe\Source\Repos\Laba_8\obj\Release\
 LABA8
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\arefe\Source\Repos\Laba_8\App.xaml
 31778656637
 1-396286241
@@ -16,5 +16,5 @@ C:\Users\arefe\Source\Repos\Laba_8\App.xaml
 151370623878
 EndGameForm.xaml;GameScence.xaml;MainWindow.xaml;
 
-False
+True
 
