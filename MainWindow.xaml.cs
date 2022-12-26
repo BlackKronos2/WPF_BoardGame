@@ -19,7 +19,10 @@ namespace LABA8
 
             slider2.Minimum = 2;
             slider2.Maximum = 20;
-            slider2.Value = Properties.Settings.Default.MoveSpeed;
+            if (Properties.Settings.Default.LoadGame == false)
+                slider2.Value = 14;
+            else
+                slider2.Value = Properties.Settings.Default.MoveSpeed;
 
             button2.IsEnabled = Properties.Settings.Default.LoadGame;
             checkBox1.IsChecked = Properties.Settings.Default.DevelopMode;

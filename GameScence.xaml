@@ -8,7 +8,7 @@
         Title="GameScence" Height="825" Width="1589" Closing="Window_Closing" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid HorizontalAlignment="Left" Width="1579" Margin="0,0,0,4">
         <Image HorizontalAlignment="Left" Height="795" Margin="0,0,-17,0" VerticalAlignment="Top" Width="1073" Source="pack://siteoforigin:,,,/Resources/Background_1073x795.jpg"/>
-        <RichTextBox x:Name="richTextBox1" HorizontalAlignment="Left" Height="282" Margin="1196,337,0,0" VerticalAlignment="Top" Width="280" FontSize="24">
+        <RichTextBox x:Name="richTextBox1" HorizontalAlignment="Left" Height="282" Margin="1196,357,0,0" VerticalAlignment="Top" Width="280" FontSize="24">
             <FlowDocument>
                 <Paragraph>
                     <Run Text="RichTextBox"/>
@@ -21,9 +21,10 @@
             <Image x:Name="Dice2" Height="80" Canvas.Left="306" Canvas.Top="88" Width="80" Source="pack://siteoforigin:,,,/Resources/Dice_1.png"/>
         </Canvas>
         <CheckBox x:Name="animationChechBox" Content="Не показывать анимацию" HorizontalAlignment="Left" Margin="1244,300,0,0" VerticalAlignment="Top" Width="182" Checked="CheckBox_Checked"/>
-        <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="1285,266,0,0" VerticalAlignment="Top" Width="100" Click="button1_Click"/>
+        <Button x:Name="button1" Content="Бросить кубики" HorizontalAlignment="Left" Margin="1285,266,0,0" VerticalAlignment="Top" Width="100" Click="button1_Click"/>
         <Canvas x:Name="mapCanvas" HorizontalAlignment="Left" Height="795" VerticalAlignment="Top" Width="1073" Margin="0,0,0,-3"/>
-        <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Margin="1285,642,0,0" VerticalAlignment="Top" Width="100" Click="button2_Click"/>
+        <Button x:Name="button2" Content="Сдвинуть фишку на 1 вперед" HorizontalAlignment="Left" Margin="1244,661,0,0" VerticalAlignment="Top" Width="191" Click="button2_Click"/>
+        <Label Content="Статистика" HorizontalAlignment="Left" Margin="1294,328,0,0" VerticalAlignment="Top" Width="91" FontSize="14"/>
 
     </Grid>
 </Window>
